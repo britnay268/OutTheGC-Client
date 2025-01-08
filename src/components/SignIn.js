@@ -1,5 +1,5 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import { signIn } from '../utils/auth';
 
 function Signin() {
@@ -15,9 +15,9 @@ function Signin() {
     >
       <h1>Hi there!</h1>
       <p>Click the button below to login!</p>
-      <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
+      <button className="btn btn-neutral" onClick={signIn}>
         Sign In
-      </Button>
+      </button>
     </div>
   );
 }
