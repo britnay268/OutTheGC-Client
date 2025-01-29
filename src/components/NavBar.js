@@ -7,6 +7,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import Link from 'next/link';
 import { signOut } from '../utils/auth';
 
 export default function NavBar() {
@@ -14,7 +15,9 @@ export default function NavBar() {
     <>
       <div className="navbar bg-white pb-0 pt-0 h-5">
         <div className="navbar-start">
-          <a className="mr-5 text-black">My Trips</a>
+          <Link className="mr-5 text-black" href="/trips" passHref>
+            My Trips
+          </Link>
           <a className="mr-5 text-black">Shared Trips</a>
           <a className="mr-5 text-black">Community</a>
         </div>
