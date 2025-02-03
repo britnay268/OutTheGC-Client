@@ -15,11 +15,21 @@ export default function NavBar() {
     <>
       <div className="navbar bg-white pb-0 pt-0 h-5">
         <div className="navbar-start">
-          <Link className="mr-5 text-black" href="/trips" passHref>
-            My Trips
-          </Link>
-          <a className="mr-5 text-black">Shared Trips</a>
-          <a className="mr-5 text-black">Community</a>
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+            </div>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <Link className="p-1" href="/trips" passHref>
+                Trips
+              </Link>
+              <Link className="p-1" href="/community" passHref>
+                Community
+              </Link>
+            </ul>
+          </div>
         </div>
         <div className="navbar-center">
           <img className="w-15 h-20" alt="OutTheGC logo" src="/images/FullLogo_Transparent.png" />
@@ -33,7 +43,9 @@ export default function NavBar() {
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
               <li>
-                <a>Profile</a>
+                <Link href="/profile" passHref>
+                  Profile
+                </Link>
               </li>
               <li>
                 <button type="button" onClick={signOut}>
